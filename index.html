@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de Boda</title>
+    
+    <!-- Fuentes y estilos -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500&family=Montserrat:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Archivo CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. VISTA PRINCIPAL (HERO) -->
+    <header class="hero">
+        <h1 class="nombres">
+            Leonardo <br>
+            <span>&</span> <br>
+            Nancy
+        </h1>
+        
+        <p class="fecha">Viernes 18 de Diciembre, 2026.</p>
+        
+        <p class="mensaje">
+            Tenemos el placer de invitarles<br>
+            a celebrar... 
+        </p>
+        <p class="fechamisa">
+            Nuestras <strong>bodas de perla</strong><br>
+            30 aniversario
+        </p>
+        
+        <div class="contador">
+            <div class="tiempo">
+                <span class="numero" id="dias">00</span>
+                <span class="etiqueta">Días</span>
+            </div>
+            <div class="tiempo">
+                <span class="numero" id="horas">00</span>
+                <span class="etiqueta">Horas</span>
+            </div>
+            <div class="tiempo">
+                <span class="numero" id="minutos">00</span>
+                <span class="etiqueta">Minutos</span>
+            </div>
+            <div class="tiempo">
+                <span class="numero" id="segundos">00</span>
+                <span class="etiqueta">Segundos</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN DE AGRADECIMIENTO (NUEVO DISEÑO ELEGANTE) -->
+    <section class="agradecimiento">
+        <div class="agradecimiento-contenido">
+            
+            <p class="texto-agradecimiento">
+                Hay momentos en la vida que son especiales por sí solos.
+            </p>
+            
+            <p class="texto-agradecimiento">
+                Pero sin lugar a dudas, el hecho de que Dios nos haya permitido compartir junto a ustedes esta, nuestra renovación matrimonial, lo convierte en un día inolvidable.
+            </p>
+            
+            <p class="texto-agradecimiento destacado">
+                Gracias por hacer de este un día especial.
+            </p>
+            
+            <div class="separador-elegante"></div>
+            
+            <p class="firma-agradecimiento">Nancy & Leonardo</p>
+            
+        </div>
+    </section>
+
+    <!-- 2. SECCIÓN DE CONFIRMACIÓN DE ASISTENCIA (RSVP) -->
+    <!-- 2. SECCIÓN DE CONFIRMACIÓN (RSVP) -->
+    <section class="rsvp">
+        <h2>Confirmación de Asistencia</h2>
+        <p class="rsvp-mensaje2">Nos encantaría compartir este día contigo.</p>
+
+        <p class="fechamisa">Hora misa: 16:30hrs</p>
+        <p class="fechamisa">Hora salón: 19:30hrs</p>
+        
+        <!-- Este es el nuevo botón inicial -->
+        <button id="btn-mostrar-form" class="btn-confirmar" style="max-width: 300px;">Confirmar asistencia</button>
+        
+        <!-- El contenedor del formulario ahora está oculto por defecto -->
+        <div class="form-container" id="contenedor-formulario" style="display: none; margin-top: 30px;">
+            <div class="pases-info">
+                Pases reservados en tu honor: <span id="numero-pases">...</span>
+            </div>
+
+            <form id="rsvp-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre de la familia o invitado:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Familia Pérez" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="asistentes">¿Cuántos asisten?</label>
+                    <select id="asistentes" name="asistentes">
+                        <!-- Se llenará dinámicamente con JS -->
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-confirmar" id="btn-submit">Enviar confirmación</button>
+            </form>
+            
+            <!-- Mensaje de éxito oculto por defecto -->
+            <p id="mensaje-exito" style="display:none; color: #354F33; text-align: center; margin-top: 15px; font-weight: bold;">
+                ¡Gracias! Tu asistencia ha sido registrada.
+            </p>
+        </div>
+    </section>
+
+    <!-- 3. SECCIÓN DE GALERÍA (CARRUSEL) -->
+    <section class="galeria">
+        <h2>Nosotros</h2>
+        <p class="galeria-mensaje">Un poco de nuestra historia.</p>
+        
+        <div class="carousel-container">
+            <div class="carousel-track" id="carousel-track">
+                <!-- Sustituye src por el nombre de tus fotos (ej. foto1.jpg) -->
+                <img src="foto1.jpeg" alt="Nuestra foto 1" class="carousel-slide">
+                <img src="foto2.jpeg" alt="Nuestra foto 2" class="carousel-slide">
+                <img src="foto3.jpeg" alt="Nuestra foto 3" class="carousel-slide">
+                <img src="foto4.jpeg" alt="Nuestra foto 4" class="carousel-slide">
+                <img src="foto5.jpeg" alt="Nuestra foto 4" class="carousel-slide">
+            </div>
+            
+            <!-- Botones de navegación -->
+            <button class="carousel-btn prev" id="btn-prev">&#10094;</button>
+            <button class="carousel-btn next" id="btn-next">&#10095;</button>
+            
+            <!-- Indicadores (Puntitos) -->
+            <div class="carousel-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+                <span class="dot" data-index="4"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SECCIÓN DE UBICACIÓN (Tarjetas horizontales) -->
+    <section class="ubicacion">
+        <h2>Ubicaciones</h2>
+        <p class="ubicacion-mensaje">Acompáñanos en la ceremonia y la recepción.</p>
+        
+        <div class="ubicaciones-grid">
+            <!-- TARJETA 1: LA MISA -->
+            <div class="tarjeta-ubicacion">
+                <i class="fas fa-church"></i>
+                <h3>Ceremonia Religiosa</h3>
+                <h4>Cuasiparroquia Ntra. Sra. de Guadalupe</h4>
+                
+                <div class="info-fecha">
+                    <p><strong>Fecha:</strong> Viernes, 18 de Diciembre de 2026</p>
+                    <p><strong>Hora:</strong> 4:30 PM</p>
+                </div>
+                
+                <p class="direccion">Carmen Serdán 3, Hank González, Iztapalapa, 09700 Ciudad de México, CDMX</p>
+                
+                <a href="https://maps.app.goo.gl/6FN9boWX4gmdq4BY7" target="_blank" class="btn-mapa">Abrir en Google Maps</a>
+            </div>
+
+            <!-- TARJETA 2: EL SALÓN -->
+            <div class="tarjeta-ubicacion">
+                <!-- Cambié el ícono a unas copas brindando para el salón -->
+                <i class="fas fa-glass-cheers"></i> 
+                <h3>Recepción</h3>
+                <h4>Salón Chilanguito</h4>
+                
+                <div class="info-fecha">
+                    <p><strong>Fecha:</strong> Viernes, 18 de Diciembre de 2026</p>
+                    <p><strong>Hora:</strong> 7:30 PM</p>
+                </div>
+                
+                <p class="direccion">Insurgentes 27, Desarrollo Urbano Quetzalcóatl, Iztapalapa, 09700 Ciudad de México, CDMX</p>
+                
+                <a href="https://maps.app.goo.gl/7uhsLsS4BcscqcgT7" target="_blank" class="btn-mapa">Abrir en Google Maps</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CÓDIGO DE VESTIMENTA -->
+    <section class="dress-code">
+        <h2>Código de Vestimenta</h2>
+        <p class="dress-code-sub">Formal / Elegante</p>
+        
+        <div class="dress-card">
+            <!-- Aquí reemplazamos el icono por tu imagen -->
+            <img src="foto6.png" alt="Código de vestimenta" class="dress-img">
+            
+            <p class="dress-text">
+                Por favor evitar prendas en color <strong>vino</strong> y <strong>arena o aperlado</strong>.
+            </p>
+        </div>
+    </section>
+
+    <!-- 5. SECCIÓN DE REGALOS -->
+    <section class="regalos">
+        <h2 class="regalos-titulo">Sugerencia de regalo</h2>
+        
+        <i class="fas fa-gift iconos-regalo"></i>
+        
+        <p class="regalos-mensaje">
+            Tu presencia es suficiente, pero<br>
+            si deseas apoyar nuestros sueños y<br>
+            proyectos, en la recepción del salón<br>
+            encontrarás el baúl para...<br>
+            <strong>¡LA LLUVIA DE SOBRES!</strong>
+        </p>
+        
+        <i class="far fa-envelope iconos-regalo"></i>
+    </section>
+
+    <!-- SECCIÓN DE PADRINOS (CARRUSEL DE TEXTO) -->
+    <section class="padrinos">
+        <h2>Nuestros Padrinos</h2>
+        <p class="padrinos-mensaje">Gracias por acompañarnos y ser parte de esta bendición.</p>
+        
+        <div class="carousel-padrinos-container">
+            <div class="carousel-padrinos-track" id="padrinos-track">
+                
+                <!-- Tarjeta 1 -->
+                <div class="padrino-slide">
+                    <div class="padrino-card">
+                        <!-- Manos rezando / fe para velación -->
+                        <i class="fas fa-hands-praying padrino-icono"></i>
+                        <h4>Padrinos de Velación</h4>
+                        <p>Ricardo Marin<br>&<br>Magdalena Carbajal</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="padrino-slide">
+                    <div class="padrino-card">
+                        <!-- Monedas para arras (Este estaba perfecto) -->
+                        <i class="fas fa-coins padrino-icono"></i>
+                        <h4>Padrinos de Arras</h4>
+                        <p>Carlos Mancera<br>&<br>Guadalupe Carbajal</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="padrino-slide">
+                    <div class="padrino-card">
+                        <!-- Símbolo de infinito que representa el lazo -->
+                        <i class="fas fa-infinity padrino-icono"></i>
+                        <h4>Padrinos de Lazo</h4>
+                        <p>Adan Mora<br>&<br>Alejandra Herrera</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 4 -->
+                <div class="padrino-slide">
+                    <div class="padrino-card">
+                        <!-- El anillo correcto -->
+                        <i class="fas fa-ring padrino-icono"></i>
+                        <h4>Padrinos de Anillos</h4>
+                        <!-- Agrupados para que quepan bien en la tarjeta -->
+                        <p>Jesús Fulgencio & Emma Fulgencio<br>&<br>Adrian Orozco & Fabiola Fulgencio</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 5 -->
+                <div class="padrino-slide">
+                    <div class="padrino-card">
+                        <!-- Flor/Hojas sutiles para el ramo -->
+                        <i class="fas fa-spa padrino-icono"></i>
+                        <h4>Madrina de Ramo</h4>
+                        <p>Edith Alcántara</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 6 -->
+                <div class="padrino-slide">
+                    <div class="padrino-card">
+                        <!-- Pastel con velas -->
+                        <i class="fas fa-cake-candles padrino-icono"></i>
+                        <h4>Padrinos de Pastel</h4>
+                        <p>Gabriel Mancera<br>&<br>Fany Garcia</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 7 -->
+                <div class="padrino-slide">
+                    <div class="padrino-card">
+                        <!-- Cámara retro elegante -->
+                        <i class="fas fa-camera-retro padrino-icono"></i>
+                        <h4>Padrinos de Foto</h4>
+                        <p>Carlos Mancera<br>&<br>Diana Gallagher</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 8 -->
+                <div class="padrino-slide">
+                    <div class="padrino-card">
+                        <!-- Sobre abierto/invitación -->
+                        <i class="fas fa-envelope-open-text padrino-icono"></i>
+                        <h4>Padrino de Invitaciones</h4>
+                        <p>Emilio Herrera</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- Botones de navegación (Reutilizan el estilo del otro carrusel pero con IDs únicos) -->
+            <button class="carousel-btn prev" id="padrinos-prev">&#10094;</button>
+            <button class="carousel-btn next" id="padrinos-next">&#10095;</button>
+            
+            <!-- Indicadores (Puntitos) -->
+            <div class="carousel-padrinos-dots">
+                <span class="dot-padrino active" data-index="0"></span>
+                <span class="dot-padrino" data-index="1"></span>
+                <span class="dot-padrino" data-index="2"></span>
+                <span class="dot-padrino" data-index="3"></span>
+                <span class="dot-padrino" data-index="4"></span>
+                <span class="dot-padrino" data-index="5"></span>
+                <span class="dot-padrino" data-index="6"></span>
+                <span class="dot-padrino" data-index="7"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FOOTER (Pie de página) -->
+    <footer class="footer">
+        <p>¡Esperamos contar con tu presencia en este día tan especial!</p>
+        <p class="footer-nombres">Leonardo & Nancy</p>
+    </footer>
+
+    <!-- Botón flotante para dudas generales -->
+    <a href="https://wa.me/525581220768" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- SCRIPTS (Lógica de la página) -->
+    <script>
+        /* --- LÓGICA DEL CONTADOR REGRESIVO --- */
+        const fechaBoda = new Date("December 18, 2026 16:00:00").getTime();
+        
+        const actualizarContador = setInterval(function() {
+            const ahora = new Date().getTime();
+            const distancia = fechaBoda - ahora;
+            
+            const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+            document.getElementById("dias").innerHTML = dias < 10 ? "0" + dias : dias;
+            document.getElementById("horas").innerHTML = horas < 10 ? "0" + horas : horas;
+            document.getElementById("minutos").innerHTML = minutos < 10 ? "0" + minutos : minutos;
+            document.getElementById("segundos").innerHTML = segundos < 10 ? "0" + segundos : segundos;
+
+            if (distancia < 0) {
+                clearInterval(actualizarContador);
+                document.querySelector(".contador").innerHTML = "<p style='font-family: Montserrat; font-style: italic; color: #555;'>¡El gran día ha llegado!</p>";
+            }
+        }, 1000);
+
+        /* --- LÓGICA DE LOS PASES --- */
+        const urlParams = new URLSearchParams(window.location.search);
+        const pases = parseInt(urlParams.get('pases')) || 2; 
+
+        document.getElementById('numero-pases').innerText = pases;
+        const selectAsistentes = document.getElementById('asistentes');
+        
+        const optionCero = document.createElement('option');
+        optionCero.value = 0;
+        optionCero.text = "0 (No podremos asistir)";
+        selectAsistentes.appendChild(optionCero);
+
+        for(let i = 1; i <= pases; i++) {
+            const opt = document.createElement('option');
+            opt.value = i;
+            opt.text = i === 1 ? i + " persona" : i + " personas";
+            if(i === pases) opt.selected = true; 
+            selectAsistentes.appendChild(opt);
+        }
+
+        /* --- LÓGICA PARA MOSTRAR EL FORMULARIO --- */
+        const btnMostrarForm = document.getElementById('btn-mostrar-form');
+        const contenedorFormulario = document.getElementById('contenedor-formulario');
+
+        btnMostrarForm.addEventListener('click', () => {
+            // Ocultamos el botón principal
+            btnMostrarForm.style.display = 'none';
+            // Mostramos el formulario
+            contenedorFormulario.style.display = 'block';
+            
+            // Un pequeño scroll automático para que el usuario vea el formulario
+            contenedorFormulario.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* --- LÓGICA DE ENVÍO A GOOGLE SHEETS --- */
+        // PEGA AQUÍ LA URL QUE TE DIO GOOGLE APPS SCRIPT
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzljPuTOAxdXje8Cx_r4HStDzoWqnVBiaMjh96eU49ecMUT_QFq7sMSKD34qI5vUVQERw/exec';
+        const form = document.getElementById('rsvp-form');
+        const btnSubmit = document.getElementById('btn-submit');
+        const mensajeExito = document.getElementById('mensaje-exito');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault(); 
+            
+            // Cambiar estado del botón mientras envía
+            btnSubmit.innerText = 'Enviando...';
+            btnSubmit.disabled = true;
+
+            // Preparamos los datos
+            const formData = new FormData(form);
+            formData.append('pases', pases); 
+
+            // Enviamos la petición
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => {
+                    form.style.display = 'none'; 
+                    mensajeExito.style.display = 'block'; 
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    btnSubmit.innerText = 'Error al enviar. Intenta de nuevo.';
+                    btnSubmit.disabled = false;
+                });
+        });
+
+        /* --- LÓGICA DEL CARRUSEL --- */
+        const track = document.getElementById('carousel-track');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const nextBtn = document.getElementById('btn-next');
+        const prevBtn = document.getElementById('btn-prev');
+        const dots = document.querySelectorAll('.dot');
+        
+        let currentIndex = 0;
+
+        function updateCarousel(index) {
+            // Mover la tira de imágenes
+            track.style.transform = `translateX(-${index * 100}%)`;
+            
+            // Actualizar puntitos activos
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+            
+            currentIndex = index;
+        }
+
+        // Clic en la flecha derecha
+        nextBtn.addEventListener('click', () => {
+            let nextIndex = currentIndex === slides.length - 1 ? 0 : currentIndex + 1;
+            updateCarousel(nextIndex);
+        });
+
+        // Clic en la flecha izquierda
+        prevBtn.addEventListener('click', () => {
+            let prevIndex = currentIndex === 0 ? slides.length - 1 : currentIndex - 1;
+            updateCarousel(prevIndex);
+        });
+
+        // Permitir clic directo en los puntitos
+        dots.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                const index = parseInt(e.target.getAttribute('data-index'));
+                updateCarousel(index);
+            });
+        });
+        /* --- LÓGICA DEL CARRUSEL DE PADRINOS --- */
+        const trackPadrinos = document.getElementById('padrinos-track');
+        const slidesPadrinos = document.querySelectorAll('.padrino-slide');
+        const nextBtnPadrinos = document.getElementById('padrinos-next');
+        const prevBtnPadrinos = document.getElementById('padrinos-prev');
+        const dotsPadrinos = document.querySelectorAll('.dot-padrino');
+        
+        let currentIndexPadrinos = 0;
+
+        function updateCarouselPadrinos(index) {
+            trackPadrinos.style.transform = `translateX(-${index * 100}%)`;
+            
+            dotsPadrinos.forEach(dot => dot.classList.remove('active'));
+            dotsPadrinos[index].classList.add('active');
+            
+            currentIndexPadrinos = index;
+        }
+
+        nextBtnPadrinos.addEventListener('click', () => {
+            let nextIndex = currentIndexPadrinos === slidesPadrinos.length - 1 ? 0 : currentIndexPadrinos + 1;
+            updateCarouselPadrinos(nextIndex);
+        });
+
+        prevBtnPadrinos.addEventListener('click', () => {
+            let prevIndex = currentIndexPadrinos === 0 ? slidesPadrinos.length - 1 : currentIndexPadrinos - 1;
+            updateCarouselPadrinos(prevIndex);
+        });
+
+        dotsPadrinos.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                const index = parseInt(e.target.getAttribute('data-index'));
+                updateCarouselPadrinos(index);
+            });
+        });
+    </script>
+</body>
+</html>
