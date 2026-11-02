@@ -1,1171 +1,787 @@
-/* RESETEO BÁSICO */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    color: #333;
-    background-color: #F7F5F0;
-}
-
-/* 1. VISTA PRINCIPAL (HERO) */
-.hero {
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    background-color: #FCFbf6; /* Tono crema de la imagen */
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de Boda</title>
     
-    /* Imagen de fondo (Descomentar cuando la tengas) */
-    /* background-image: url('tu-imagen.jpg'); */
-    /* background-size: cover; */
-    /* background-position: center; */
-}
-
-.nombres {
-    font-family: 'Great Vibes', cursive;
-    font-size: 5rem;
-    color: #6B2D3C; 
-    line-height: 1.2;
-    margin-bottom: 30px;
-    font-weight: normal;
-}
-
-.nombres span {
-    font-size: 3rem;
-}
-
-.fecha {
-    font-size: 1rem;
-    font-style: italic;
-    color: #555;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-}
-
-.fechamisa {
-    font-size: 1rem;
-    font-style: italic;
-    color: #555;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-    font-weight: bold;
-}
-
-.mensaje {
-    font-size: 0.9rem;
-    color: #666;
-    font-weight: 300;
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
-
-
-/* CONTADOR REGRESIVO */
-.contador {
-    display: flex;
-    gap: 40px;
-    font-family: 'Playfair Display', serif;
-}
-
-.tiempo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.numero {
-    font-size: 2.2rem;
-    color: #333;
-    margin-bottom: 5px;
-}
-
-.etiqueta {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.75rem;
-    font-style: italic;
-    color: #777;
-}
-
-/* 2. SECCIÓN DE CONFIRMACIÓN (RSVP) */
-.rsvp {
-    padding: 80px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #F7F5F0;
-}
-
-.rsvp h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    color: #6B2D3C; /* Mismo verde elegante */
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.rsvp-mensaje {
-    color: #666;
-    font-style: italic;
-    margin-bottom: 40px;
-}
-
-.rsvp-mensaje2 {
-    color: #666;
-    font-style: italic;
-    margin-bottom: 15px;
-}
-
-.form-container {
-    background-color: #FCFbf6; /* Fondo crema para destacar del blanco */
-    max-width: 450px;
-    width: 100%;
-    padding: 40px 30px;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-}
-
-.pases-info {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    color: #6B2D3C;
-    text-align: center;
-    margin-bottom: 25px;
-    border-bottom: 1px solid rgba(53, 79, 51, 0.2);
-    padding-bottom: 15px;
-}
-
-#numero-pases {
-    font-weight: bold;
-    font-size: 1.4rem;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    font-size: 0.85rem;
-    margin-bottom: 8px;
-    color: #555;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.form-group input, 
-.form-group select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.95rem;
-    background-color: #fff;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-.form-group input:focus, 
-.form-group select:focus {
-    border-color: #6B2D3C;
-}
-
-.btn-confirmar {
-    width: 100%;
-    background-color: #6B2D3C;
-    color: white;
-    border: none;
-    padding: 15px;
-    font-size: 1rem;
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.3s;
-    margin-top: 10px;
-}
-
-.btn-confirmar:hover {
-    background-color: #6B2D3C;
-}
-
-/* BOTÓN FLOTANTE WHATSAPP */
-.whatsapp-btn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #6B2D3C;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 35px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    text-decoration: none;
-    z-index: 1000;
-    transition: transform 0.3s ease;
-}
-
-.whatsapp-btn:hover {
-    transform: scale(1.1);
-}
-
-/* RESPONSIVE PARA CELULARES */
-@media (max-width: 600px) {
-    .nombres { font-size: 4rem; }
-    .nombres span { font-size: 2.5rem; }
-    .contador { gap: 20px; }
-    .numero { font-size: 1.8rem; }
-    .whatsapp-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 30px;
-        bottom: 20px;
-        right: 20px;
-    }
-    .form-container {
-        padding: 30px 20px;
-    }
-}
-
-/* 3. SECCIÓN DE GALERÍA (CARRUSEL) */
-.galeria {
-    padding: 60px 20px 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #FCFbf6; /* Fondo alterno para separar visualmente */
-}
-
-.galeria h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    color: #6B2D3C;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.galeria-mensaje {
-    color: #666;
-    font-style: italic;
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-.carousel-container {
-    position: relative;
-    max-width: 400px; /* Tamaño máximo para que se vea bien en compu */
-    width: 100%;
-    aspect-ratio: 1 / 1; /* Mantiene el formato cuadrado perfecto */
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.carousel-track {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide {
-    min-width: 100%;
-    height: 100%;
-    object-fit: cover; /* Evita que la foto se estire o se aplaste */
-}
-
-/* Controles (Flechas) */
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.7);
-    color: #6B2D3C;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s;
-    z-index: 2;
-}
-
-.carousel-btn:hover {
-    background-color: rgba(255, 255, 255, 0.95);
-}
-
-.prev { left: 15px; }
-.next { right: 15px; }
-
-/* Indicadores (Puntitos) */
-.carousel-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 8px;
-    z-index: 2;
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.dot.active {
-    background-color: white;
-    box-shadow: 0 0 5px rgba(0,0,0,0.3);
-}
-
-/* 4. SECCIÓN DE UBICACIÓN (NUEVO DISEÑO TARJETAS) */
-.ubicacion {
-    padding: 80px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #F7F5F0; 
-}
-
-.ubicacion h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    color: #6B2D3C;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.ubicacion-mensaje {
-    color: #666;
-    font-style: italic;
-    margin-bottom: 50px;
-    text-align: center;
-}
-
-/* El contenedor que pone las tarjetas lado a lado */
-.ubicaciones-grid {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    align-items: stretch;
-    flex-wrap: wrap; /* Esto hace que se pasen hacia abajo si no caben (celulares) */
-    width: 100%;
-    max-width: 1000px;
-}
-
-.tarjeta-ubicacion {
-    background-color: #FCFbf6; /* Fondo crema de tu diseño */
-    flex: 1 1 350px; /* Toma el espacio disponible, mínimo 350px */
-    max-width: 450px;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-    padding: 50px 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.tarjeta-ubicacion i {
-    font-size: 2.5rem;
-    color: #6B2D3C;
-    margin-bottom: 20px;
-}
-
-.tarjeta-ubicacion h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    color: #6B2D3C;
-    margin-bottom: 5px;
-}
-
-.tarjeta-ubicacion h4 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem;
-    color: #333;
-    font-weight: 500;
-    margin-bottom: 25px;
-}
-
-/* Recuadro para resaltar la fecha y hora */
-.info-fecha {
-    background-color: #F7F5F0;
-    width: 100%;
-    padding: 15px;
-    border-radius: 6px;
-    margin-bottom: 20px;
-    border: 1px solid rgba(53, 79, 51, 0.1);
-}
-
-.info-fecha p {
-    color: #555;
-    font-size: 0.95rem;
-    margin-bottom: 5px;
-}
-
-.info-fecha p strong {
-    color: #6B2D3C;
-}
-
-.info-fecha p:last-child {
-    margin-bottom: 0;
-}
-
-.tarjeta-ubicacion .direccion {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    font-size: 0.95rem;
-    flex-grow: 1; /* Empuja el botón hasta abajo para que ambas tarjetas queden parejas */
-}
-
-/* Botón de Google Maps */
-.btn-mapa {
-    background-color: transparent;
-    color: #6B2D3C;
-    border: 2px solid #6B2D3C;
-    padding: 12px 25px;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.85rem;
-    font-weight: bold;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    width: 100%;
-}
-
-.btn-mapa:hover {
-    background-color: #6B2D3C;
-    color: white;
-}
-
-/* 5. SECCIÓN DE REGALOS */
-.regalos {
-    padding: 80px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #F7F5F0; /* Fondo crema para alternar con la sección anterior */
-    text-align: center;
-}
-
-.regalos-titulo {
-    font-family: 'Great Vibes', cursive;
-    font-size: 3.5rem;
-    color: #6B2D3C;
-    font-weight: normal;
-    margin-bottom: 20px;
-}
-
-.iconos-regalo {
-    font-size: 3rem;
-    color: #6B2D3C;
-    margin: 20px 0;
-}
-
-.regalos-mensaje {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem;
-    color: #555;
-    line-height: 1.8;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.regalos-mensaje strong {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    color: #6B2D3C;
-    display: block;
-    margin-top: 10px;
-    letter-spacing: 1px;
-}
-
-/* Ajustes para celular */
-@media (max-width: 600px) {
-    .regalos-titulo {
-        font-size: 3rem;
-    }
-    .regalos-mensaje {
-        font-size: 1rem;
-    }
-}
-
-/* 6. FOOTER */
-.footer {
-    background-color: #6B2D3C; /* El verde oscuro de tu diseño */
-    color: #FCFbf6; /* Letras en color crema para que resalten */
-    text-align: center;
-    padding: 50px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.footer p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 300;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-}
-
-.footer .footer-nombres {
-    font-family: 'Great Vibes', cursive;
-    font-size: 2.5rem;
-    margin-top: 15px;
-    margin-bottom: 0;
-    font-weight: normal;
-    letter-spacing: 2px;
-}
-
-/* SECCIÓN DE AGRADECIMIENTO (NUEVO DISEÑO ELEGANTE) */
-.agradecimiento {
-    background-color: #6B2D3C; /* Fondo verde oscuro elegante */
-    padding: 100px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.agradecimiento-contenido {
-    max-width: 700px;
-    padding: 0 20px;
-}
-
-.texto-agradecimiento {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.05rem;
-    font-weight: 300;
-    line-height: 2;
-    margin-bottom: 20px;
-    letter-spacing: 0.5px;
-    color: rgba(252, 251, 246, 0.9); /* Crema ligeramente transparente */
-}
-
-/* Resalta la frase principal con cursiva y un poco más grande */
-.texto-agradecimiento.destacado {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    font-style: italic;
-    color: #FCFbf6; /* Crema sólido */
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
-/* Una pequeña línea decorativa antes de los nombres */
-.separador-elegante {
-    width: 60px;
-    height: 1px;
-    background-color: rgba(252, 251, 246, 0.3);
-    margin: 0 auto 30px;
-}
-
-.firma-agradecimiento {
-    font-family: 'Great Vibes', cursive;
-    font-size: 3.5rem;
-    color: #FCFbf6;
-    font-weight: normal;
-    margin: 0;
-    letter-spacing: 2px;
-}
-
-/* Ajustes para celulares */
-@media (max-width: 600px) {
-    .agradecimiento {
-        padding: 80px 20px;
-    }
-    .texto-agradecimiento {
-        font-size: 0.95rem;
-    }
-    .texto-agradecimiento.destacado {
-        font-size: 1.15rem;
-    }
-    .firma-agradecimiento {
-        font-size: 2.8rem;
-    }
-}
-
-/* SECCIÓN DE PADRINOS (CARRUSEL DE TEXTO) */
-.padrinos {
-    padding: 80px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #FCFbf6;
-}
-
-.padrinos h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    color: #6B2D3C;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.padrinos-mensaje {
-    color: #666;
-    font-style: italic;
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-.carousel-padrinos-container {
-    position: relative;
-    max-width: 400px;
-    width: 100%;
-    overflow: hidden;
-    padding-bottom: 40px; /* Deja espacio para los puntitos */
-}
-
-.carousel-padrinos-track {
-    display: flex;
-    width: 100%;
-    transition: transform 0.5s ease-in-out;
-}
-
-.padrino-slide {
-    min-width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-}
-
-.padrino-card {
-    background-color: #F7F5F0;
-    border: 1px solid rgba(53, 79, 51, 0.1);
-    border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    padding: 40px 20px;
-    width: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 250px;
-}
-
-.padrino-icono {
-    font-size: 2rem;
-    color: #6B2D3C;
-    margin-bottom: 20px;
-    opacity: 0.8;
-}
-
-.padrino-card h4 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #777;
-    margin-bottom: 20px;
-}
-
-.padrino-card p {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    color: #6B2D3C;
-    line-height: 1.4;
-    margin: 0;
-}
-
-/* Indicadores de Padrinos (Puntitos verdes) */
-.carousel-padrinos-dots {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 8px;
-}
-
-.dot-padrino {
-    width: 10px;
-    height: 10px;
-    background-color: rgba(53, 79, 51, 0.2);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.dot-padrino.active {
-    background-color: #6B2D3C;
-}
-
-/* SECCIÓN CÓDIGO DE VESTIMENTA */
-.dress-code {
-    padding: 80px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #FCFbf6; /* Fondo crema para alternar con la sección anterior */
-    text-align: center;
-}
-
-.dress-code h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    color: #6B2D3C;
-    margin-bottom: 5px;
-}
-
-.dress-code-sub {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.95rem;
-    color: #666;
-    font-style: italic;
-    margin-bottom: 35px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.dress-card {
-    background-color: #F7F5F0;
-    max-width: 500px;
-    width: 100%;
-    padding: 40px 30px;
-    border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.03);
-    border: 1px solid rgba(53, 79, 51, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.dress-text {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.05rem;
-    color: #555;
-    line-height: 1.6;
-}
-
-.dress-text strong {
-    color: #6B2D3C;
-    font-weight: 600;
-}
-
-/* ESTILOS PARA LA IMAGEN DE CÓDIGO DE VESTIMENTA */
-.dress-img {
-    width: 80px;          /* Un tamaño equilibrado y elegante */
-    height: auto;          
-    object-fit: contain;
-    margin-bottom: 10px;   
-    margin-top: -20px;  
-   
-}
-
-/* ==========================================================
-   SECCIÓN CORTE DE HONOR - DOBLE COLUMNA SINCRONIZADA Y EDITORIAL
-   ================================================---------- */
-.corte-honor {
-    padding: 80px 15px; /* Padding lateral controlado para pantallas pequeñas */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #F7F5F0; /* Fondo perlado */
-    text-align: center;
-    width: 100%;
-    overflow: hidden; /* Seguro total para evitar desbordes laterales */
-    box-sizing: border-box;
-}
-
-.corte-honor h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.3rem;
-    color: #6B2D3C;
-    margin-bottom: 5px;
-    font-weight: 400;
-}
-
-.corte-sub {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.95rem;
-    color: #666;
-    font-style: italic;
-    margin-bottom: 40px;
-    letter-spacing: 0.5px;
-}
-
-/* Contenedor principal ajustado */
-.carousel-corte-doble-container {
-    position: relative;
-    max-width: 820px; /* Ancho optimizado para mantener proporción elegante */
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-sizing: border-box;
-}
-
-.corte-columnas-wrapper {
-    display: flex;
-    gap: 25px;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 25px;
-    box-sizing: border-box;
-}
-
-/* Tarjeta contenedora de cada columna con control estricto de ancho */
-.corte-columna-box {
-    flex: 1;
-    min-width: 0; /* Impide que el contenido interno expanda el flex a la fuerza */
-    background-color: #FCFbf6; /* Fondo crema */
-    border: 1px solid rgba(107, 45, 60, 0.18);
-    border-radius: 12px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
-    padding: 30px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    box-sizing: border-box;
-}
-
-.corte-col-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 25px;
-    color: #6B2D3C;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    font-weight: 600;
-}
-
-.corte-col-header i {
-    font-size: 1rem;
-    opacity: 0.85;
-}
-
-/* Carrusel interno */
-.carousel-sub-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    min-height: 110px;
-    display: flex;
-    align-items: center;
-}
-
-.carousel-sub-track {
-    display: flex;
-    width: 100%;
-    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.sub-slide {
-    min-width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-    box-sizing: border-box;
-}
-
-/* Tarjeta interna miniatura con diseño refinado */
-.corte-card-mini {
-    background-color: #ffffff;
-    border: 1px solid rgba(107, 45, 60, 0.12);
-    border-radius: 8px;
-    padding: 25px 15px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.02);
-    position: relative;
-    box-sizing: border-box;
-}
-
-/* Pequeños detalles decorativos en las esquinas de la tarjetita */
-.corte-card-mini::before,
-.corte-card-mini::after {
-    content: '✦';
-    font-size: 0.5rem;
-    color: #6B2D3C;
-    opacity: 0.4;
-    position: absolute;
-    top: 8px;
-}
-.corte-card-mini::before { left: 10px; }
-.corte-card-mini::after { right: 10px; }
-
-.corte-card-mini.vazio {
-    visibility: hidden; /* Oculta el espacio vacío para mantener la simetría exacta */
-}
-
-.corte-card-mini h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    color: #6B2D3C;
-    margin: 0;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-}
-
-/* Controles de navegación inferiores */
-.corte-controles {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5px;
-}
-
-/* --- CONTROLES DE LA CORTE DE HONOR (CORREGIDOS) --- */
-.corte-controles {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    width: 100%;
-}
-
-/* Estilo para los botones de las flechas */
-.carousel-corte-doble-container .carousel-btn {
-    position: static;
-    transform: none;
-    background-color: #FCFbf6;
-    color: #6B2D3C;
-    border: 1px solid rgba(107, 45, 60, 0.25);
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    font-size: 0.85rem;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-}
-
-.carousel-corte-doble-container .carousel-btn:hover {
-    background-color: #6B2D3C;
-    color: #FCFbf6;
-    transform: scale(1.05);
-}
-
-/* Estilo para el indicador numérico (ej. 04 / 07) */
-.corte-contador-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.05rem;
-    color: #6B2D3C;
-    letter-spacing: 1px;
-    min-width: 60px;
-    text-align: center;
-}
-
-/* Responsivo para celulares */
-@media (max-width: 768px) {
-    .corte-columnas-wrapper {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .corte-columna-box {
-        padding: 20px 15px;
-    }
-}
-
-/* ==========================================================
-   SECCIÓN DE PADRES Y SUEGROS - ESTILO EDITORIAL
-   ================================================---------- */
-.padres-suegros {
-    padding: 90px 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #FCFbf6; /* Fondo crema para alternar */
-    text-align: center;
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-}
-
-.padres-tag {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #777;
-    display: block;
-    margin-bottom: 8px;
-}
-
-.padres-suegros h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.3rem;
-    color: #6B2D3C;
-    margin-bottom: 10px;
-    font-weight: 400;
-}
-
-.padres-insignia {
-    color: #6B2D3C;
-    font-size: 0.9rem;
-    opacity: 0.6;
-    margin-bottom: 40px;
-}
-
-/* Grid para las dos tarjetas (Padres él y Padres ella) */
-.padres-grid {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    width: 100%;
-    max-width: 850px;
-    box-sizing: border-box;
-}
-
-.padres-card {
-    flex: 1;
-    min-width: 0;
-    background-color: #ffffff;
-    border: 1px solid rgba(107, 45, 60, 0.15);
-    border-radius: 12px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03);
-    padding: 35px 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    box-sizing: border-box;
-}
-
-/* Detalles decorativos en esquinas */
-.padres-card::before,
-.padres-card::after {
-    content: '✦';
-    font-size: 0.5rem;
-    color: #6B2D3C;
-    opacity: 0.4;
-    position: absolute;
-    top: 10px;
-}
-.padres-card::before { left: 12px; }
-.padres-card::after { right: 12px; }
-
-.padres-icon {
-    font-size: 1.2rem;
-    color: #6B2D3C;
-    margin-bottom: 15px;
-    opacity: 0.8;
-}
-
-.padres-card h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #555;
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-.separador-padres {
-    width: 40px;
-    height: 1px;
-    background-color: rgba(107, 45, 60, 0.3);
-    margin-bottom: 20px;
-}
-
-.padres-nombres {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-}
-
-.padres-nombres p {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.25rem;
-    color: #6B2D3C;
-    margin: 0;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-}
-
-/* Estilo para los nombres con cruz (fallecidos) */
-.padres-nombres p.fallecido {
-    color: #666; /* Un tono un poco más sobrio */
-}
-
-/* ==========================================================
-   BOTÓN FLOTANTE DE MÚSICA
-   ================================================---------- */
-.musica-btn {
-    position: fixed;
-    top: 30px; /* O puedes cambiarlo a bottom: 30px si lo prefieres abajo a la izquierda */
-    left: 30px;
-    background-color: #FCFbf6;
-    color: #6B2D3C;
-    border: 1px solid rgba(107, 45, 60, 0.25);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    cursor: pointer;
-    z-index: 1000;
-    transition: all 0.3s ease;
-}
-
-.musica-btn:hover {
-    background-color: #6B2D3C;
-    color: #FCFbf6;
-    transform: scale(1.1);
-}
-
-/* Pequeña animación opcional de rotación cuando la música está activa */
-.musica-btn.reproduciendo {
-    animation: girarNota 3s linear infinite;
-    background-color: #6B2D3C;
-    color: #FCFbf6;
-}
-
-@keyframes girarNota {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Responsivo para celulares */
-@media (max-width: 768px) {
-    .padres-grid {
-        flex-direction: column;
-        gap: 20px;
-    }
-}
+    <!-- Fuentes y estilos -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500&family=Montserrat:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Archivo CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- REPRODUCTOR DE MÚSICA DE FONDO -->
+    <audio id="audio-fondo" loop>
+        <!-- Reemplaza 'tu-cancion.mp3' por el enlace de tu archivo de audio o canción -->
+        <source src="imagine.mp3" type="audio/mp3">
+        Tu navegador no soporta elementos de audio.
+    </audio>
+
+    <!-- Botón flotante para encender/apagar la música -->
+    <button id="btn-musica" class="musica-btn" aria-label="Reproducir música">
+        <i class="fas fa-music" id="icono-musica"></i>
+    </button>
+<body>
+
+    <!-- 1. VISTA PRINCIPAL (HERO) -->
+    <header class="hero">
+        <h1 class="nombres">
+            Leonardo <br>
+            <span>&</span> <br>
+            Nancy
+        </h1>
+        
+        <p class="fecha">Viernes 18 de Diciembre, 2026.</p>
+        
+        <p class="mensaje">
+            Tenemos el placer de invitarles<br>
+            a celebrar... 
+        </p>
+        <p class="fechamisa">
+            Nuestras <strong>bodas de perla</strong><br>
+            30 aniversario
+        </p>
+        
+        <div class="contador">
+            <div class="tiempo">
+                <span class="numero" id="dias">00</span>
+                <span class="etiqueta">Días</span>
+            </div>
+            <div class="tiempo">
+                <span class="numero" id="horas">00</span>
+                <span class="etiqueta">Horas</span>
+            </div>
+            <div class="tiempo">
+                <span class="numero" id="minutos">00</span>
+                <span class="etiqueta">Minutos</span>
+            </div>
+            <div class="tiempo">
+                <span class="numero" id="segundos">00</span>
+                <span class="etiqueta">Segundos</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN DE AGRADECIMIENTO (NUEVO DISEÑO ELEGANTE) -->
+    <section class="agradecimiento">
+        <div class="agradecimiento-contenido">
+            
+            <p class="texto-agradecimiento">
+                Hay momentos en la vida que son especiales por sí solos.
+            </p>
+            
+            <p class="texto-agradecimiento">
+                Pero sin lugar a dudas, el hecho de que Dios nos haya permitido compartir junto a ustedes esta, nuestra renovación matrimonial, lo convierte en un día inolvidable.
+            </p>
+            
+            <p class="texto-agradecimiento destacado">
+                Gracias por hacer de este un día especial.
+            </p>
+            
+            <div class="separador-elegante"></div>
+            
+            <p class="firma-agradecimiento">Nancy & Leonardo</p>
+            
+        </div>
+    </section>
+
+    <!-- 2. SECCIÓN DE CONFIRMACIÓN DE ASISTENCIA (RSVP) -->
+    <!-- 2. SECCIÓN DE CONFIRMACIÓN (RSVP) -->
+    <section class="rsvp">
+        <h2>Confirmación de Asistencia</h2>
+        <p class="rsvp-mensaje2">Nos encantaría compartir este día contigo.</p>
+
+        <p class="fechamisa">Hora misa: 16:30hrs</p>
+        <p class="fechamisa">Hora salón: 19:30hrs</p>
+        
+        <!-- Este es el nuevo botón inicial -->
+        <button id="btn-mostrar-form" class="btn-confirmar" style="max-width: 300px;">Confirmar asistencia</button>
+        
+        <!-- El contenedor del formulario ahora está oculto por defecto -->
+        <div class="form-container" id="contenedor-formulario" style="display: none; margin-top: 30px;">
+            <div class="pases-info">
+                Pases reservados en tu honor: <span id="numero-pases">...</span>
+            </div>
+
+            <form id="rsvp-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre de la familia o invitado:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Familia Pérez" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="asistentes">¿Cuántos asisten?</label>
+                    <select id="asistentes" name="asistentes">
+                        <!-- Se llenará dinámicamente con JS -->
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-confirmar" id="btn-submit">Enviar confirmación</button>
+            </form>
+            
+            <!-- Mensaje de éxito oculto por defecto -->
+            <p id="mensaje-exito" style="display:none; color: #354F33; text-align: center; margin-top: 15px; font-weight: bold;">
+                ¡Gracias! Tu asistencia ha sido registrada.
+            </p>
+        </div>
+    </section>
+
+    <!-- 3. SECCIÓN DE GALERÍA (CARRUSEL) -->
+    <section class="galeria">
+        <h2>Nosotros</h2>
+        <p class="galeria-mensaje">Un poco de nuestra historia.</p>
+        
+        <div class="carousel-container">
+            <div class="carousel-track" id="carousel-track">
+                <!-- Sustituye src por el nombre de tus fotos (ej. foto1.jpg) -->
+                <img src="foto1.jpeg" alt="Nuestra foto 1" class="carousel-slide">
+                <img src="foto2.jpeg" alt="Nuestra foto 2" class="carousel-slide">
+                <img src="foto3.jpeg" alt="Nuestra foto 3" class="carousel-slide">
+                <img src="foto4.jpeg" alt="Nuestra foto 4" class="carousel-slide">
+                <img src="foto5.jpeg" alt="Nuestra foto 4" class="carousel-slide">
+            </div>
+            
+            <!-- Botones de navegación -->
+            <button class="carousel-btn prev" id="btn-prev">&#10094;</button>
+            <button class="carousel-btn next" id="btn-next">&#10095;</button>
+            
+            <!-- Indicadores (Puntitos) -->
+            <div class="carousel-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+                <span class="dot" data-index="4"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SECCIÓN DE UBICACIÓN (Tarjetas horizontales) -->
+    <section class="ubicacion">
+        <h2>Ubicaciones</h2>
+        <p class="ubicacion-mensaje">Acompáñanos en la ceremonia y la recepción.</p>
+        
+        <div class="ubicaciones-grid">
+            <!-- TARJETA 1: LA MISA -->
+            <div class="tarjeta-ubicacion">
+                <i class="fas fa-church"></i>
+                <h3>Ceremonia Religiosa</h3>
+                <h4>Cuasiparroquia Ntra. Sra. de Guadalupe</h4>
+                
+                <div class="info-fecha">
+                    <p><strong>Fecha:</strong> Viernes, 18 de Diciembre de 2026</p>
+                    <p><strong>Hora:</strong> 4:30 PM</p>
+                </div>
+                
+                <p class="direccion">Carmen Serdán 3, Hank González, Iztapalapa, 09700 Ciudad de México, CDMX</p>
+                
+                <a href="https://maps.app.goo.gl/6FN9boWX4gmdq4BY7" target="_blank" class="btn-mapa">Abrir en Google Maps</a>
+            </div>
+
+            <!-- TARJETA 2: EL SALÓN -->
+            <div class="tarjeta-ubicacion">
+                <!-- Cambié el ícono a unas copas brindando para el salón -->
+                <i class="fas fa-glass-cheers"></i> 
+                <h3>Recepción</h3>
+                <h4>Salón Chilanguito</h4>
+                
+                <div class="info-fecha">
+                    <p><strong>Fecha:</strong> Viernes, 18 de Diciembre de 2026</p>
+                    <p><strong>Hora:</strong> 7:30 PM</p>
+                </div>
+                
+                <p class="direccion">Insurgentes 27, Desarrollo Urbano Quetzalcóatl, Iztapalapa, 09700 Ciudad de México, CDMX</p>
+                
+                <a href="https://maps.app.goo.gl/7uhsLsS4BcscqcgT7" target="_blank" class="btn-mapa">Abrir en Google Maps</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CÓDIGO DE VESTIMENTA -->
+    <section class="dress-code">
+        <h2>Código de Vestimenta</h2>
+        <p class="dress-code-sub">Formal / Elegante</p>
+        
+        <div class="dress-card">
+            <!-- Aquí reemplazamos el icono por tu imagen -->
+            <img src="foto6.png" alt="Código de vestimenta" class="dress-img">
+            
+            <p class="dress-text">
+                Por favor evitar prendas en color <strong>vino</strong> y <strong>arena o aperlado</strong>.
+            </p>
+        </div>
+    </section>
+
+    <!-- 5. SECCIÓN DE REGALOS -->
+    <section class="regalos">
+        <h2 class="regalos-titulo">Sugerencia de regalo</h2>
+        
+        <i class="fas fa-gift iconos-regalo"></i>
+        
+        <p class="regalos-mensaje">
+            Tu presencia es suficiente, pero<br>
+            si deseas apoyar nuestros sueños y<br>
+            proyectos, en la recepción del salón<br>
+            encontrarás el baúl para...<br>
+            <strong>¡LA LLUVIA DE SOBRES!</strong>
+        </p>
+        
+        <i class="far fa-envelope iconos-regalo"></i>
+    </section>
+
+    <!-- SECCIÓN DE PADRINOS (CARRUSEL DE TEXTO) -->
+    <section class="padrinos">
+        <h2>Nuestros Padrinos</h2>
+        <p class="padrinos-mensaje">Gracias por acompañarnos y ser parte de esta bendición.</p>
+        
+        <div class="carousel-padrinos-container">
+            <div class="carousel-padrinos-track" id="padrinos-track">
+                
+                <!-- Tarjeta 1 -->
+                <div class="padrino-slide">
+                    <div class="padrino-card">
+                        <!-- Manos rezando / fe para velación -->
+                        <i class="fas fa-hands-praying padrino-icono"></i>
+                        <h4>Padrinos de Velación</h4>
+                        <p>Ricardo Marin<br>&<br>Magdalena Carbajal</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="padrino-slide">
+                    <div class="padrino-card">
+                        <!-- Monedas para arras (Este estaba perfecto) -->
+                        <i class="fas fa-coins padrino-icono"></i>
+                        <h4>Padrinos de Arras</h4>
+                        <p>Carlos Mancera<br>&<br>Guadalupe Carbajal</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="padrino-slide">
+                    <div class="padrino-card">
+                        <!-- Símbolo de infinito que representa el lazo -->
+                        <i class="fas fa-infinity padrino-icono"></i>
+                        <h4>Padrinos de Lazo</h4>
+                        <p>Adan Mora<br>&<br>Alejandra Herrera</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 4 -->
+                <div class="padrino-slide">
+                    <div class="padrino-card">
+                        <!-- El anillo correcto -->
+                        <i class="fas fa-ring padrino-icono"></i>
+                        <h4>Padrinos de Anillos</h4>
+                        <!-- Agrupados para que quepan bien en la tarjeta -->
+                        <p>Jesús Fulgencio & Emma Fulgencio<br>&<br>Adrian Orozco & Fabiola Fulgencio</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 5 -->
+                <div class="padrino-slide">
+                    <div class="padrino-card">
+                        <!-- Flor/Hojas sutiles para el ramo -->
+                        <i class="fas fa-spa padrino-icono"></i>
+                        <h4>Madrina de Ramo</h4>
+                        <p>Edith Alcántara</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 6 -->
+                <div class="padrino-slide">
+                    <div class="padrino-card">
+                        <!-- Pastel con velas -->
+                        <i class="fas fa-cake-candles padrino-icono"></i>
+                        <h4>Padrinos de Pastel</h4>
+                        <p>Gabriel Mancera<br>&<br>Fany Garcia</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 7 -->
+                <div class="padrino-slide">
+                    <div class="padrino-card">
+                        <!-- Cámara retro elegante -->
+                        <i class="fas fa-camera-retro padrino-icono"></i>
+                        <h4>Padrinos de Foto</h4>
+                        <p>Carlos Mancera<br>&<br>Diana Gallagher</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 8 -->
+                <div class="padrino-slide">
+                    <div class="padrino-card">
+                        <!-- Sobre abierto/invitación -->
+                        <i class="fas fa-envelope-open-text padrino-icono"></i>
+                        <h4>Padrino de Invitaciones</h4>
+                        <p>Emilio Herrera</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- Botones de navegación (Reutilizan el estilo del otro carrusel pero con IDs únicos) -->
+            <button class="carousel-btn prev" id="padrinos-prev">&#10094;</button>
+            <button class="carousel-btn next" id="padrinos-next">&#10095;</button>
+            
+            <!-- Indicadores (Puntitos) -->
+            <div class="carousel-padrinos-dots">
+                <span class="dot-padrino active" data-index="0"></span>
+                <span class="dot-padrino" data-index="1"></span>
+                <span class="dot-padrino" data-index="2"></span>
+                <span class="dot-padrino" data-index="3"></span>
+                <span class="dot-padrino" data-index="4"></span>
+                <span class="dot-padrino" data-index="5"></span>
+                <span class="dot-padrino" data-index="6"></span>
+                <span class="dot-padrino" data-index="7"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CORTE DE HONOR PRODUCIDA -->
+    <section class="corte-honor">
+        
+        <!-- ENCABEZADO EDITORIAL -->
+        <div class="corte-header-group">
+            <span class="corte-tag">Bodas de Perla</span>
+            <h2>Corte de Honor</h2>
+            <p class="corte-sub">Acompañantes en este día tan especial</p>
+            
+            <div class="corte-filigrana">
+                <div class="linea"></div>
+                <i class="fa-solid fa-gem"></i>
+                <div class="linea"></div>
+            </div>
+        </div>
+
+        <!-- CONTENEDOR DEL CARRUSEL SINCRONIZADO -->
+        <div class="corte-display-container">
+            <div class="corte-columnas-wrapper">
+                
+                <!-- COLUMNA DAMAS DE HONOR -->
+                <div class="corte-columna-box">
+                    <div class="corte-col-header">
+                        <div class="corte-icon-wrapper">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <span>Damas de Honor</span>
+                    </div>
+                    
+                    <div class="carousel-sub-container">
+                        <div class="carousel-sub-track" id="track-damas">
+                            <div class="sub-slide">
+                                <div class="corte-card-mini">
+                                    <h3>Lorna Herrera</h3>
+                                    <span class="rol-subtext">Dama de Honor</span>
+                                </div>
+                            </div>
+                            <div class="sub-slide">
+                                <div class="corte-card-mini">
+                                    <h3>Leticia Valencia</h3>
+                                    <span class="rol-subtext">Dama de Honor</span>
+                                </div>
+                            </div>
+                            <div class="sub-slide">
+                                <div class="corte-card-mini">
+                                    <h3>Violeta Quintero</h3>
+                                    <span class="rol-subtext">Dama de Honor</span>
+                                </div>
+                            </div>
+                            <div class="sub-slide">
+                                <div class="corte-card-mini">
+                                    <h3>Fabiola Fulgencio</h3>
+                                    <span class="rol-subtext">Dama de Honor</span>
+                                </div>
+                            </div>
+                            <div class="sub-slide">
+                                <div class="corte-card-mini">
+                                    <h3>Edith Alcántara</h3>
+                                    <span class="rol-subtext">Dama de Honor</span>
+                                </div>
+                            </div>
+                            <div class="sub-slide">
+                                <div class="corte-card-mini">
+                                    <h3>Romina Pablo</h3>
+                                    <span class="rol-subtext">Dama de Honor</span>
+                                </div>
+                            </div>
+                            <div class="sub-slide">
+                                <div class="corte-card-mini">
+                                    <h3>Maricela Fulgencio</h3>
+                                    <span class="rol-subtext">Dama de Honor</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUMNA CABALLEROS DE HONOR -->
+                <div class="corte-columna-box">
+                    <div class="corte-col-header">
+                        <div class="corte-icon-wrapper">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <span>Caballeros de Honor</span>
+                    </div>
+                    
+                    <div class="carousel-sub-container">
+                        <div class="carousel-sub-track" id="track-caballeros">
+                            <div class="sub-slide">
+                                <div class="corte-card-mini">
+                                    <h3>Mario Herrera</h3>
+                                    <span class="rol-subtext">Caballero de Honor</span>
+                                </div>
+                            </div>
+                            <div class="sub-slide">
+                                <div class="corte-card-mini">
+                                    <h3>Jair Herrera</h3>
+                                    <span class="rol-subtext">Caballero de Honor</span>
+                                </div>
+                            </div>
+                            <div class="sub-slide">
+                                <div class="corte-card-mini">
+                                    <h3>Alexis Herrera</h3>
+                                    <span class="rol-subtext">Caballero de Honor</span>
+                                </div>
+                            </div>
+                            <div class="sub-slide">
+                                <div class="corte-card-mini">
+                                    <h3>Gerardo Herrera</h3>
+                                    <span class="rol-subtext">Caballero de Honor</span>
+                                </div>
+                            </div>
+                            <div class="sub-slide">
+                                <div class="corte-card-mini">
+                                    <h3>Adrian Orozco</h3>
+                                    <span class="rol-subtext">Caballero de Honor</span>
+                                </div>
+                            </div>
+                            <div class="sub-slide">
+                                <div class="corte-card-mini">
+                                    <h3>Aldair Pablo</h3>
+                                    <span class="rol-subtext">Caballero de Honor</span>
+                                </div>
+                            </div>
+                            <!-- Slide final elegante de acompañamiento -->
+                            <div class="sub-slide">
+                                <div class="corte-card-mini vazio">
+                                    <h3>Leonardo & Nancy</h3>
+                                    <span class="rol-subtext">Agradecen su compañía</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Controles de navegación y paginación en una sola línea -->
+            <div class="corte-controles">
+                <button class="carousel-btn prev" id="corte-prev">&#10094;</button>
+                <span class="corte-contador-num" id="corte-counter">01 / 07</span>
+                <button class="carousel-btn next" id="corte-next">&#10095;</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE PADRES Y SUEGROS -->
+    <section class="padres-suegros">
+        <span class="padres-tag">Con todo nuestro amor y gratitud</span>
+        <h2>Nuestros Padres</h2>
+        <div class="padres-insignia">❖</div>
+
+        <div class="padres-grid">
+            
+            <!-- TARJETA PADRES DE ÉL (LEONARDO) -->
+            <div class="padres-card">
+                <i class="fas fa-heart padres-icon"></i>
+                <h3>Padres del Novio</h3>
+                <div class="separador-padres"></div>
+                <div class="padres-nombres">
+                    <!-- Ejemplo de padres (puedes ajustar los nombres de tus papás si faltan o agregar la cruz si aplica) -->
+                    <p>Leonardo Herrera Osorio ✝</p> 
+                    <p>Martha Elia Ortiz Arevalo ✝</p>
+                </div>
+            </div>
+
+            <!-- TARJETA PADRES DE ELLA (NANCY) -->
+            <div class="padres-card">
+                <i class="fas fa-heart padres-icon"></i>
+                <h3>Padres de la Novia</h3>
+                <div class="separador-padres"></div>
+                <div class="padres-nombres">
+                    <p>Maricela Carbajal Astudillo ✝</p>
+                    <p>Jesús Fulgencio García</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 6. FOOTER (Pie de página) -->
+    <footer class="footer">
+        <p>¡Esperamos contar con tu presencia en este día tan especial!</p>
+        <p class="footer-nombres">Leonardo & Nancy</p>
+    </footer>
+
+    <!-- Botón flotante para dudas generales -->
+    <a href="https://wa.me/525581220768" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- SCRIPTS (Lógica de la página) -->
+    <script>
+        /* --- LÓGICA DEL CONTADOR REGRESIVO --- */
+        const fechaBoda = new Date("December 18, 2026 16:00:00").getTime();
+        
+        const actualizarContador = setInterval(function() {
+            const ahora = new Date().getTime();
+            const distancia = fechaBoda - ahora;
+            
+            const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+            document.getElementById("dias").innerHTML = dias < 10 ? "0" + dias : dias;
+            document.getElementById("horas").innerHTML = horas < 10 ? "0" + horas : horas;
+            document.getElementById("minutos").innerHTML = minutos < 10 ? "0" + minutos : minutos;
+            document.getElementById("segundos").innerHTML = segundos < 10 ? "0" + segundos : segundos;
+
+            if (distancia < 0) {
+                clearInterval(actualizarContador);
+                document.querySelector(".contador").innerHTML = "<p style='font-family: Montserrat; font-style: italic; color: #555;'>¡El gran día ha llegado!</p>";
+            }
+        }, 1000);
+
+        /* --- LÓGICA DE LOS PASES --- */
+        const urlParams = new URLSearchParams(window.location.search);
+        const pases = parseInt(urlParams.get('pases')) || 2; 
+
+        document.getElementById('numero-pases').innerText = pases;
+        const selectAsistentes = document.getElementById('asistentes');
+        
+        const optionCero = document.createElement('option');
+        optionCero.value = 0;
+        optionCero.text = "0 (No podremos asistir)";
+        selectAsistentes.appendChild(optionCero);
+
+        for(let i = 1; i <= pases; i++) {
+            const opt = document.createElement('option');
+            opt.value = i;
+            opt.text = i === 1 ? i + " persona" : i + " personas";
+            if(i === pases) opt.selected = true; 
+            selectAsistentes.appendChild(opt);
+        }
+
+        /* --- LÓGICA PARA MOSTRAR EL FORMULARIO --- */
+        const btnMostrarForm = document.getElementById('btn-mostrar-form');
+        const contenedorFormulario = document.getElementById('contenedor-formulario');
+
+        btnMostrarForm.addEventListener('click', () => {
+            // Ocultamos el botón principal
+            btnMostrarForm.style.display = 'none';
+            // Mostramos el formulario
+            contenedorFormulario.style.display = 'block';
+            
+            // Un pequeño scroll automático para que el usuario vea el formulario
+            contenedorFormulario.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        /* --- LÓGICA DE ENVÍO A GOOGLE SHEETS --- */
+        // PEGA AQUÍ LA URL QUE TE DIO GOOGLE APPS SCRIPT
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzljPuTOAxdXje8Cx_r4HStDzoWqnVBiaMjh96eU49ecMUT_QFq7sMSKD34qI5vUVQERw/exec';
+        const form = document.getElementById('rsvp-form');
+        const btnSubmit = document.getElementById('btn-submit');
+        const mensajeExito = document.getElementById('mensaje-exito');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault(); 
+            
+            // Cambiar estado del botón mientras envía
+            btnSubmit.innerText = 'Enviando...';
+            btnSubmit.disabled = true;
+
+            // Preparamos los datos
+            const formData = new FormData(form);
+            formData.append('pases', pases); 
+
+            // Enviamos la petición
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => {
+                    form.style.display = 'none'; 
+                    mensajeExito.style.display = 'block'; 
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    btnSubmit.innerText = 'Error al enviar. Intenta de nuevo.';
+                    btnSubmit.disabled = false;
+                });
+        });
+
+        /* --- LÓGICA DEL CARRUSEL --- */
+        const track = document.getElementById('carousel-track');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const nextBtn = document.getElementById('btn-next');
+        const prevBtn = document.getElementById('btn-prev');
+        const dots = document.querySelectorAll('.dot');
+        
+        let currentIndex = 0;
+
+        function updateCarousel(index) {
+            // Mover la tira de imágenes
+            track.style.transform = `translateX(-${index * 100}%)`;
+            
+            // Actualizar puntitos activos
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+            
+            currentIndex = index;
+        }
+
+        // Clic en la flecha derecha
+        nextBtn.addEventListener('click', () => {
+            let nextIndex = currentIndex === slides.length - 1 ? 0 : currentIndex + 1;
+            updateCarousel(nextIndex);
+        });
+
+        // Clic en la flecha izquierda
+        prevBtn.addEventListener('click', () => {
+            let prevIndex = currentIndex === 0 ? slides.length - 1 : currentIndex - 1;
+            updateCarousel(prevIndex);
+        });
+
+        // Permitir clic directo en los puntitos
+        dots.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                const index = parseInt(e.target.getAttribute('data-index'));
+                updateCarousel(index);
+            });
+        });
+        /* --- LÓGICA DEL CARRUSEL DE PADRINOS --- */
+        const trackPadrinos = document.getElementById('padrinos-track');
+        const slidesPadrinos = document.querySelectorAll('.padrino-slide');
+        const nextBtnPadrinos = document.getElementById('padrinos-next');
+        const prevBtnPadrinos = document.getElementById('padrinos-prev');
+        const dotsPadrinos = document.querySelectorAll('.dot-padrino');
+        
+        let currentIndexPadrinos = 0;
+
+        function updateCarouselPadrinos(index) {
+            trackPadrinos.style.transform = `translateX(-${index * 100}%)`;
+            
+            dotsPadrinos.forEach(dot => dot.classList.remove('active'));
+            dotsPadrinos[index].classList.add('active');
+            
+            currentIndexPadrinos = index;
+        }
+
+        nextBtnPadrinos.addEventListener('click', () => {
+            let nextIndex = currentIndexPadrinos === slidesPadrinos.length - 1 ? 0 : currentIndexPadrinos + 1;
+            updateCarouselPadrinos(nextIndex);
+        });
+
+        prevBtnPadrinos.addEventListener('click', () => {
+            let prevIndex = currentIndexPadrinos === 0 ? slidesPadrinos.length - 1 : currentIndexPadrinos - 1;
+            updateCarouselPadrinos(prevIndex);
+        });
+
+        dotsPadrinos.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                const index = parseInt(e.target.getAttribute('data-index'));
+                updateCarouselPadrinos(index);
+            });
+        });
+
+        /* --- LÓGICA DE CORTE DE HONOR (DOBLE COLUMNA SINCRONIZADA) --- */
+    document.addEventListener('DOMContentLoaded', () => {
+        const trackDamas = document.getElementById('track-damas');
+        const trackCaballeros = document.getElementById('track-caballeros');
+        const counterActual = document.getElementById('corte-counter'); // Asegúrate que el ID en tu HTML sea 'corte-counter'
+        const totalSlidesCorte = 7;
+        
+        const nextBtnCorte = document.getElementById('corte-next');
+        const prevBtnCorte = document.getElementById('corte-prev');
+        
+        let currentCorteIndex = 0;
+
+        function updateDobleCorte(index) {
+            currentCorteIndex = index;
+            const desplazamiento = `translateX(-${currentCorteIndex * 100}%)`; // Agregado el operador * faltante
+            
+            if (trackDamas) trackDamas.style.transform = desplazamiento;
+            if (trackCaballeros) trackCaballeros.style.transform = desplazamiento;
+            
+            // Actualiza contador visual con formato a 2 dígitos (01, 02, etc.)
+            if (counterActual) {
+                const numeroFormateado = String(currentCorteIndex + 1).padStart(2, '0');
+                counterActual.textContent = `${numeroFormateado} / 07`;
+            }
+        }
+
+        if (nextBtnCorte) {
+            nextBtnCorte.addEventListener('click', () => {
+                let nextIndex = (currentCorteIndex + 1) % totalSlidesCorte;
+                updateDobleCorte(nextIndex);
+            });
+        }
+
+        if (prevBtnCorte) {
+            prevBtnCorte.addEventListener('click', () => {
+                let prevIndex = (currentCorteIndex - 1 + totalSlidesCorte) % totalSlidesCorte;
+                updateDobleCorte(prevIndex);
+            });
+        }
+
+        // Avance automático cada 4.5 segundos
+        let autoSlide = setInterval(() => {
+            let nextIndex = (currentCorteIndex + 1) % totalSlidesCorte;
+            updateDobleCorte(nextIndex);
+        }, 4500);
+
+        // Pausar autoplay al interactuar con botones
+        const resetTimer = () => {
+            clearInterval(autoSlide);
+            autoSlide = setInterval(() => {
+                let nextIndex = (currentCorteIndex + 1) % totalSlidesCorte;
+                updateDobleCorte(nextIndex);
+            }, 4500);
+        };
+
+        if (nextBtnCorte) nextBtnCorte.addEventListener('click', resetTimer);
+        if (prevBtnCorte) prevBtnCorte.addEventListener('click', resetTimer);
+    });
+
+    /* --- LÓGICA DE MÚSICA DE FONDO --- */
+    document.addEventListener('DOMContentLoaded', () => {
+        const audioFondo = document.getElementById('audio-fondo');
+        const btnMusica = document.getElementById('btn-musica');
+        const iconoMusica = document.getElementById('icono-musica');
+
+        let reproduciendo = false;
+
+        btnMusica.addEventListener('click', () => {
+            if (!reproduciendo) {
+                audioFondo.play().then(() => {
+                    reproduciendo = true;
+                    btnMusica.classList.add('reproduciendo');
+                    iconoMusica.className = 'fas fa-volume-up'; // Cambia a icono de volumen encendido
+                }).catch(error => {
+                    console.log("Error al reproducir el audio: ", error);
+                });
+            } else {
+                audioFondo.pause();
+                reproduciendo = false;
+                btnMusica.classList.remove('reproduciendo');
+                iconoMusica.className = 'fas fa-music'; // Regresa al icono de nota musical
+            }
+        });
+    });
+
+    </script>
+</body>
+</html>
