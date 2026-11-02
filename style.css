@@ -778,5 +778,394 @@ body {
     margin-bottom: 10px;   
     margin-top: -20px;  
    
-    
+}
+
+/* ==========================================================
+   SECCIÓN CORTE DE HONOR - DOBLE COLUMNA SINCRONIZADA Y EDITORIAL
+   ================================================---------- */
+.corte-honor {
+    padding: 80px 15px; /* Padding lateral controlado para pantallas pequeñas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F7F5F0; /* Fondo perlado */
+    text-align: center;
+    width: 100%;
+    overflow: hidden; /* Seguro total para evitar desbordes laterales */
+    box-sizing: border-box;
+}
+
+.corte-honor h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.3rem;
+    color: #6B2D3C;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+
+.corte-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 40px;
+    letter-spacing: 0.5px;
+}
+
+/* Contenedor principal ajustado */
+.carousel-corte-doble-container {
+    position: relative;
+    max-width: 820px; /* Ancho optimizado para mantener proporción elegante */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.corte-columnas-wrapper {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+}
+
+/* Tarjeta contenedora de cada columna con control estricto de ancho */
+.corte-columna-box {
+    flex: 1;
+    min-width: 0; /* Impide que el contenido interno expanda el flex a la fuerza */
+    background-color: #FCFbf6; /* Fondo crema */
+    border: 1px solid rgba(107, 45, 60, 0.18);
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.corte-col-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    color: #6B2D3C;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 600;
+}
+
+.corte-col-header i {
+    font-size: 1rem;
+    opacity: 0.85;
+}
+
+/* Carrusel interno */
+.carousel-sub-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    min-height: 110px;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-sub-track {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.sub-slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+/* Tarjeta interna miniatura con diseño refinado */
+.corte-card-mini {
+    background-color: #ffffff;
+    border: 1px solid rgba(107, 45, 60, 0.12);
+    border-radius: 8px;
+    padding: 25px 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Pequeños detalles decorativos en las esquinas de la tarjetita */
+.corte-card-mini::before,
+.corte-card-mini::after {
+    content: '✦';
+    font-size: 0.5rem;
+    color: #6B2D3C;
+    opacity: 0.4;
+    position: absolute;
+    top: 8px;
+}
+.corte-card-mini::before { left: 10px; }
+.corte-card-mini::after { right: 10px; }
+
+.corte-card-mini.vazio {
+    visibility: hidden; /* Oculta el espacio vacío para mantener la simetría exacta */
+}
+
+.corte-card-mini h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: #6B2D3C;
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* Controles de navegación inferiores */
+.corte-controles {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+/* --- CONTROLES DE LA CORTE DE HONOR (CORREGIDOS) --- */
+.corte-controles {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Estilo para los botones de las flechas */
+.carousel-corte-doble-container .carousel-btn {
+    position: static;
+    transform: none;
+    background-color: #FCFbf6;
+    color: #6B2D3C;
+    border: 1px solid rgba(107, 45, 60, 0.25);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.carousel-corte-doble-container .carousel-btn:hover {
+    background-color: #6B2D3C;
+    color: #FCFbf6;
+    transform: scale(1.05);
+}
+
+/* Estilo para el indicador numérico (ej. 04 / 07) */
+.corte-contador-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: #6B2D3C;
+    letter-spacing: 1px;
+    min-width: 60px;
+    text-align: center;
+}
+
+/* Responsivo para celulares */
+@media (max-width: 768px) {
+    .corte-columnas-wrapper {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .corte-columna-box {
+        padding: 20px 15px;
+    }
+}
+
+/* ==========================================================
+   SECCIÓN DE PADRES Y SUEGROS - ESTILO EDITORIAL
+   ================================================---------- */
+.padres-suegros {
+    padding: 90px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FCFbf6; /* Fondo crema para alternar */
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.padres-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #777;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.padres-suegros h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.3rem;
+    color: #6B2D3C;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.padres-insignia {
+    color: #6B2D3C;
+    font-size: 0.9rem;
+    opacity: 0.6;
+    margin-bottom: 40px;
+}
+
+/* Grid para las dos tarjetas (Padres él y Padres ella) */
+.padres-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    width: 100%;
+    max-width: 850px;
+    box-sizing: border-box;
+}
+
+.padres-card {
+    flex: 1;
+    min-width: 0;
+    background-color: #ffffff;
+    border: 1px solid rgba(107, 45, 60, 0.15);
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03);
+    padding: 35px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Detalles decorativos en esquinas */
+.padres-card::before,
+.padres-card::after {
+    content: '✦';
+    font-size: 0.5rem;
+    color: #6B2D3C;
+    opacity: 0.4;
+    position: absolute;
+    top: 10px;
+}
+.padres-card::before { left: 12px; }
+.padres-card::after { right: 12px; }
+
+.padres-icon {
+    font-size: 1.2rem;
+    color: #6B2D3C;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.padres-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #555;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.separador-padres {
+    width: 40px;
+    height: 1px;
+    background-color: rgba(107, 45, 60, 0.3);
+    margin-bottom: 20px;
+}
+
+.padres-nombres {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.padres-nombres p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: #6B2D3C;
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* Estilo para los nombres con cruz (fallecidos) */
+.padres-nombres p.fallecido {
+    color: #666; /* Un tono un poco más sobrio */
+}
+
+/* ==========================================================
+   BOTÓN FLOTANTE DE MÚSICA
+   ================================================---------- */
+.musica-btn {
+    position: fixed;
+    top: 30px; /* O puedes cambiarlo a bottom: 30px si lo prefieres abajo a la izquierda */
+    left: 30px;
+    background-color: #FCFbf6;
+    color: #6B2D3C;
+    border: 1px solid rgba(107, 45, 60, 0.25);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.musica-btn:hover {
+    background-color: #6B2D3C;
+    color: #FCFbf6;
+    transform: scale(1.1);
+}
+
+/* Pequeña animación opcional de rotación cuando la música está activa */
+.musica-btn.reproduciendo {
+    animation: girarNota 3s linear infinite;
+    background-color: #6B2D3C;
+    color: #FCFbf6;
+}
+
+@keyframes girarNota {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsivo para celulares */
+@media (max-width: 768px) {
+    .padres-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
