@@ -12,6 +12,18 @@
     <!-- Archivo CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
+
+<!-- REPRODUCTOR DE MÚSICA DE FONDO -->
+    <audio id="audio-fondo" loop>
+        <!-- Reemplaza 'tu-cancion.mp3' por el enlace de tu archivo de audio o canción -->
+        <source src="imagine.mp3" type="audio/mp3">
+        Tu navegador no soporta elementos de audio.
+    </audio>
+
+    <!-- Botón flotante para encender/apagar la música -->
+    <button id="btn-musica" class="musica-btn" aria-label="Reproducir música">
+        <i class="fas fa-music" id="icono-musica"></i>
+    </button>
 <body>
 
     <!-- 1. VISTA PRINCIPAL (HERO) -->
@@ -329,6 +341,187 @@
         </div>
     </section>
 
+    <!-- SECCIÓN CORTE DE HONOR PRODUCIDA -->
+    <section class="corte-honor">
+        
+        <!-- ENCABEZADO EDITORIAL -->
+        <div class="corte-header-group">
+            <span class="corte-tag">Bodas de Perla</span>
+            <h2>Corte de Honor</h2>
+            <p class="corte-sub">Acompañantes en este día tan especial</p>
+            
+            <div class="corte-filigrana">
+                <div class="linea"></div>
+                <i class="fa-solid fa-gem"></i>
+                <div class="linea"></div>
+            </div>
+        </div>
+
+        <!-- CONTENEDOR DEL CARRUSEL SINCRONIZADO -->
+        <div class="corte-display-container">
+            <div class="corte-columnas-wrapper">
+                
+                <!-- COLUMNA DAMAS DE HONOR -->
+                <div class="corte-columna-box">
+                    <div class="corte-col-header">
+                        <div class="corte-icon-wrapper">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <span>Damas de Honor</span>
+                    </div>
+                    
+                    <div class="carousel-sub-container">
+                        <div class="carousel-sub-track" id="track-damas">
+                            <div class="sub-slide">
+                                <div class="corte-card-mini">
+                                    <h3>Lorna Herrera</h3>
+                                    <span class="rol-subtext">Dama de Honor</span>
+                                </div>
+                            </div>
+                            <div class="sub-slide">
+                                <div class="corte-card-mini">
+                                    <h3>Leticia Valencia</h3>
+                                    <span class="rol-subtext">Dama de Honor</span>
+                                </div>
+                            </div>
+                            <div class="sub-slide">
+                                <div class="corte-card-mini">
+                                    <h3>Violeta Quintero</h3>
+                                    <span class="rol-subtext">Dama de Honor</span>
+                                </div>
+                            </div>
+                            <div class="sub-slide">
+                                <div class="corte-card-mini">
+                                    <h3>Fabiola Fulgencio</h3>
+                                    <span class="rol-subtext">Dama de Honor</span>
+                                </div>
+                            </div>
+                            <div class="sub-slide">
+                                <div class="corte-card-mini">
+                                    <h3>Edith Alcántara</h3>
+                                    <span class="rol-subtext">Dama de Honor</span>
+                                </div>
+                            </div>
+                            <div class="sub-slide">
+                                <div class="corte-card-mini">
+                                    <h3>Romina Pablo</h3>
+                                    <span class="rol-subtext">Dama de Honor</span>
+                                </div>
+                            </div>
+                            <div class="sub-slide">
+                                <div class="corte-card-mini">
+                                    <h3>Maricela Fulgencio</h3>
+                                    <span class="rol-subtext">Dama de Honor</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUMNA CABALLEROS DE HONOR -->
+                <div class="corte-columna-box">
+                    <div class="corte-col-header">
+                        <div class="corte-icon-wrapper">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <span>Caballeros de Honor</span>
+                    </div>
+                    
+                    <div class="carousel-sub-container">
+                        <div class="carousel-sub-track" id="track-caballeros">
+                            <div class="sub-slide">
+                                <div class="corte-card-mini">
+                                    <h3>Mario Herrera</h3>
+                                    <span class="rol-subtext">Caballero de Honor</span>
+                                </div>
+                            </div>
+                            <div class="sub-slide">
+                                <div class="corte-card-mini">
+                                    <h3>Jair Herrera</h3>
+                                    <span class="rol-subtext">Caballero de Honor</span>
+                                </div>
+                            </div>
+                            <div class="sub-slide">
+                                <div class="corte-card-mini">
+                                    <h3>Alexis Herrera</h3>
+                                    <span class="rol-subtext">Caballero de Honor</span>
+                                </div>
+                            </div>
+                            <div class="sub-slide">
+                                <div class="corte-card-mini">
+                                    <h3>Gerardo Herrera</h3>
+                                    <span class="rol-subtext">Caballero de Honor</span>
+                                </div>
+                            </div>
+                            <div class="sub-slide">
+                                <div class="corte-card-mini">
+                                    <h3>Adrian Orozco</h3>
+                                    <span class="rol-subtext">Caballero de Honor</span>
+                                </div>
+                            </div>
+                            <div class="sub-slide">
+                                <div class="corte-card-mini">
+                                    <h3>Aldair Pablo</h3>
+                                    <span class="rol-subtext">Caballero de Honor</span>
+                                </div>
+                            </div>
+                            <!-- Slide final elegante de acompañamiento -->
+                            <div class="sub-slide">
+                                <div class="corte-card-mini vazio">
+                                    <h3>Leonardo & Nancy</h3>
+                                    <span class="rol-subtext">Agradecen su compañía</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Controles de navegación y paginación en una sola línea -->
+            <div class="corte-controles">
+                <button class="carousel-btn prev" id="corte-prev">&#10094;</button>
+                <span class="corte-contador-num" id="corte-counter">01 / 07</span>
+                <button class="carousel-btn next" id="corte-next">&#10095;</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE PADRES Y SUEGROS -->
+    <section class="padres-suegros">
+        <span class="padres-tag">Con todo nuestro amor y gratitud</span>
+        <h2>Nuestros Padres</h2>
+        <div class="padres-insignia">❖</div>
+
+        <div class="padres-grid">
+            
+            <!-- TARJETA PADRES DE ÉL (LEONARDO) -->
+            <div class="padres-card">
+                <i class="fas fa-heart padres-icon"></i>
+                <h3>Padres del Novio</h3>
+                <div class="separador-padres"></div>
+                <div class="padres-nombres">
+                    <!-- Ejemplo de padres (puedes ajustar los nombres de tus papás si faltan o agregar la cruz si aplica) -->
+                    <p>Leonardo Herrera Osorio ✝</p> 
+                    <p>Martha Elia Ortiz Arevalo ✝</p>
+                </div>
+            </div>
+
+            <!-- TARJETA PADRES DE ELLA (NANCY) -->
+            <div class="padres-card">
+                <i class="fas fa-heart padres-icon"></i>
+                <h3>Padres de la Novia</h3>
+                <div class="separador-padres"></div>
+                <div class="padres-nombres">
+                    <p>Maricela Carbajal Astudillo ✝</p>
+                    <p>Jesús Fulgencio García</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <!-- 6. FOOTER (Pie de página) -->
     <footer class="footer">
         <p>¡Esperamos contar con tu presencia en este día tan especial!</p>
@@ -503,6 +696,92 @@
                 updateCarouselPadrinos(index);
             });
         });
+
+        /* --- LÓGICA DE CORTE DE HONOR (DOBLE COLUMNA SINCRONIZADA) --- */
+    document.addEventListener('DOMContentLoaded', () => {
+        const trackDamas = document.getElementById('track-damas');
+        const trackCaballeros = document.getElementById('track-caballeros');
+        const counterActual = document.getElementById('corte-counter'); // Asegúrate que el ID en tu HTML sea 'corte-counter'
+        const totalSlidesCorte = 7;
+        
+        const nextBtnCorte = document.getElementById('corte-next');
+        const prevBtnCorte = document.getElementById('corte-prev');
+        
+        let currentCorteIndex = 0;
+
+        function updateDobleCorte(index) {
+            currentCorteIndex = index;
+            const desplazamiento = `translateX(-${currentCorteIndex * 100}%)`; // Agregado el operador * faltante
+            
+            if (trackDamas) trackDamas.style.transform = desplazamiento;
+            if (trackCaballeros) trackCaballeros.style.transform = desplazamiento;
+            
+            // Actualiza contador visual con formato a 2 dígitos (01, 02, etc.)
+            if (counterActual) {
+                const numeroFormateado = String(currentCorteIndex + 1).padStart(2, '0');
+                counterActual.textContent = `${numeroFormateado} / 07`;
+            }
+        }
+
+        if (nextBtnCorte) {
+            nextBtnCorte.addEventListener('click', () => {
+                let nextIndex = (currentCorteIndex + 1) % totalSlidesCorte;
+                updateDobleCorte(nextIndex);
+            });
+        }
+
+        if (prevBtnCorte) {
+            prevBtnCorte.addEventListener('click', () => {
+                let prevIndex = (currentCorteIndex - 1 + totalSlidesCorte) % totalSlidesCorte;
+                updateDobleCorte(prevIndex);
+            });
+        }
+
+        // Avance automático cada 4.5 segundos
+        let autoSlide = setInterval(() => {
+            let nextIndex = (currentCorteIndex + 1) % totalSlidesCorte;
+            updateDobleCorte(nextIndex);
+        }, 4500);
+
+        // Pausar autoplay al interactuar con botones
+        const resetTimer = () => {
+            clearInterval(autoSlide);
+            autoSlide = setInterval(() => {
+                let nextIndex = (currentCorteIndex + 1) % totalSlidesCorte;
+                updateDobleCorte(nextIndex);
+            }, 4500);
+        };
+
+        if (nextBtnCorte) nextBtnCorte.addEventListener('click', resetTimer);
+        if (prevBtnCorte) prevBtnCorte.addEventListener('click', resetTimer);
+    });
+
+    /* --- LÓGICA DE MÚSICA DE FONDO --- */
+    document.addEventListener('DOMContentLoaded', () => {
+        const audioFondo = document.getElementById('audio-fondo');
+        const btnMusica = document.getElementById('btn-musica');
+        const iconoMusica = document.getElementById('icono-musica');
+
+        let reproduciendo = false;
+
+        btnMusica.addEventListener('click', () => {
+            if (!reproduciendo) {
+                audioFondo.play().then(() => {
+                    reproduciendo = true;
+                    btnMusica.classList.add('reproduciendo');
+                    iconoMusica.className = 'fas fa-volume-up'; // Cambia a icono de volumen encendido
+                }).catch(error => {
+                    console.log("Error al reproducir el audio: ", error);
+                });
+            } else {
+                audioFondo.pause();
+                reproduciendo = false;
+                btnMusica.classList.remove('reproduciendo');
+                iconoMusica.className = 'fas fa-music'; // Regresa al icono de nota musical
+            }
+        });
+    });
+
     </script>
 </body>
 </html>
